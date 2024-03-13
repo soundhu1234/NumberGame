@@ -1,0 +1,29 @@
+pipeline { 
+    agent any 
+         stages { 
+        stage('Ok') { 
+            steps { 
+                echo "Ok" 
+            } 
+        } 
+    } 
+    post { 
+        always { 
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], 
+[$class: 'RequesterRecipientProvider']], subject: 'Test' 
+        } 
+    } 
+} 
+9th: 
+https://github.com/kishancs2020/TicketBookingServiceJunitTesting 
+7th: 
+pipeline{ 
+    agent any  
+    stages{ 
+        stage('git'){ 
+            steps{ 
+                git'https://github.com/simplilearn-github/Pipeline_Script.git' 
+            } 
+        } 
+    } 
+} 
